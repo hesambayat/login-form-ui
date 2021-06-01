@@ -28,6 +28,7 @@
 
 <script>
 import { ref } from 'vue'
+import validEmail from '@/helpers/validEmail'
 
 export default {
   name: 'Login',
@@ -51,22 +52,18 @@ export default {
         this.errorPassword = ''
       }
 
-      if (!this.validEmail(this.email)) {
+      if (!validEmail(this.email)) {
         this.errorEmail = 'Bitte Email-Adresse eingeben'
       } else {
         this.errorEmail = ''
       }
 
       if (this.password && !this.errorPassword && this.email && !this.errorEmail) {
-        this.message = 'Login successful. Please wait while we redirect...'
+        this.message = 'Anmeldung erfolgreich. Bitte warten Sie, während wir umleiten...'
       }
 
       e.preventDefault();
     },
-    validEmail: function (email) {
-      var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-      return re.test(email ?? '');
-    }
   }
 }
 </script>
