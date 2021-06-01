@@ -8,8 +8,10 @@
   --color-metal: #858585;
   --color-silver: #b7b7b7;
   --color-red: #c63040;
+  --color-balmoral: #7fa08a;
 
   --box-shadow: 0px 12px 48px rgba(0, 0, 0, 0.1);
+  --toast-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
 
   --font-family: 'Open Sans', -apple-system, system-ui, "Helvetica Neue", Helvetica, "Segoe UI", Roboto, "Apple Color Emoji", "Segoe UI Emoji", sans-serif;
   --font-weight-regular: 400;

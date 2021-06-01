@@ -4,6 +4,7 @@ import Grid from './el-grid'
 import Input from './el-input'
 import Logo from './el-logo'
 import Panel from './el-panel'
+import Toast from './el-toast'
 import LanguageSwitcher from './language-switcher'
 
 export {
@@ -13,5 +14,6 @@ export {
   Input,
   Logo,
   Panel,
+  Toast,
   LanguageSwitcher,
 }

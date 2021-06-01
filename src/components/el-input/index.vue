@@ -63,10 +63,8 @@ export default {
     font-weight: var(--font-weight-bold);
     line-height: 20px;
     color: var(--color-red);
-  }
-
-  .form-element--input .slide-fade-enter-active {
-    transition: all 0.3s;
+    transition: opacity 0.1s, transform 0.3s;
+    will-change: opacity, transform;
   }
 
   .form-element--input .slide-fade-enter-from,

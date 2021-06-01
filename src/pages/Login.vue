@@ -21,6 +21,9 @@
       <router-link to="/forgot-password">Passwort vergessen?</router-link>
     </template>
   </el-panel>
+  <el-toast :show="!!message">
+    {{ message }}
+  </el-toast>
 </template>
 
 <script>
@@ -30,6 +33,7 @@ export default {
   name: 'Login',
   setup() {
     return {
+      message: ref(''),
       email: ref(''),
       errorEmail: ref(''),
       password: ref(''),
@@ -39,6 +43,8 @@ export default {
   },
   methods: {
     checkForm: function (e) {
+      this.message = ''
+      
       if (!this.password) {
         this.errorPassword = 'Bitte legen Sie ein Passwort an'
       } else {
@@ -49,6 +55,10 @@ export default {
         this.errorEmail = 'Bitte Email-Adresse eingeben'
       } else {
         this.errorEmail = ''
+      }
+
+      if (this.password && !this.errorPassword && this.email && !this.errorEmail) {
+        this.message = 'Login successful. Please wait while we redirect...'
       }
 
       e.preventDefault();
