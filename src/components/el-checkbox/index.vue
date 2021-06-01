@@ -46,20 +46,28 @@ export default {
   width: 20px;
   height: 20px;
   border: 1px solid var(--color-light-gray);
-  transition: border-color 0.1s;
-  will-change: border-color;
+  transition: border-color 0.1s, background-color 0.1s, opacity 0.1s;
+  will-change: border-color, background-color, opacity;
 }
 
-.form-element--checkbox input:focus + .checkbox {
+.form-element--checkbox input:checked + .checkbox {
+  border-color: var(--color-red);
+  background-color: var(--color-red);
+}
+
+.form-element--checkbox input:not(:checked):focus + .checkbox {
   border-color: var(--color-silver);
 }
 
 .form-element--checkbox .checkbox svg {
-  fill: var(--color-dark-blue);
+  fill: var(--color-white);
+  transition: opacity 0.1s, transform 0.2s;
+  will-change: opacity, transform;
 }
 
 .form-element--checkbox input:not(:checked) + .checkbox svg {
   opacity: 0;
+  transform: scale(0);
 }
 
 .form-element--checkbox .label {

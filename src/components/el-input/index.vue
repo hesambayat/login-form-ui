@@ -1,8 +1,11 @@
 <template>
-  <div class="form-element form-element--input">
+  <div class="form-element form-element--input" :class="{ error: !!errorMessage }">
     <label>
       <span class="label" v-if="!!label">{{ label }}</span>
       <input :value="modelValue" @input="$emit('update:modelValue', $event.target.value)" :type="type" />
+      <transition name="slide-fade">
+        <span class="error-message" v-if="!!errorMessage">{{ errorMessage }}</span>
+      </transition>
     </label>
   </div>
 </template>
@@ -10,13 +13,14 @@
 <script>
 export default {
   name: 'el-input',
-  props: ['modelValue', 'label', 'type'],
+  props: ['modelValue', 'label', 'type', 'errorMessage'],
   emits: ['update:modelValue'],
 }
 </script>
 
 <style>
   .form-element--input {
+    position: relative;
     margin-bottom: 20px;
   }
 
@@ -47,5 +51,27 @@ export default {
 
   .form-element--input input:focus {
     border-color: var(--color-silver);
+  }
+
+  .form-element--input.error input {
+    border-color: var(--color-red);
+  }
+
+  .form-element--input .error-message {
+    position: absolute;
+    font-size: 10px;
+    font-weight: var(--font-weight-bold);
+    line-height: 20px;
+    color: var(--color-red);
+  }
+
+  .form-element--input .slide-fade-enter-active {
+    transition: all 0.3s;
+  }
+
+  .form-element--input .slide-fade-enter-from,
+  .form-element--input .slide-fade-leave-to {
+    transform: translateY(-5px);
+    opacity: 0;
   }
 </style>
