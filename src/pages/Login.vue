@@ -10,8 +10,8 @@
       method="post"
       novalidate="true"
     >
-      <el-input v-model="email" label="Email-Adresse" :errorMessage="errorEmail" />
-      <el-input v-model="password" label="Password" type="password" :errorMessage="errorPassword" />
+      <el-input v-model="email" label="Email-Adresse" :errorMessage="errorEmail" type="email" autocomplete="email" />
+      <el-input v-model="password" label="Password" type="password" :errorMessage="errorPassword" autocomplete="current-password" />
       <el-grid class="align-items-center justify-content-space-between actions">
         <el-button type="submit">Anmelden</el-button>
         <el-checkbox v-model="remember" label="Passwort merken" />

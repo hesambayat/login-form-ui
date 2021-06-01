@@ -8,7 +8,7 @@
       method="post"
       novalidate="true"
     >
-      <el-input v-model="email" label="Email-Adresse" :errorMessage="errorEmail" />
+      <el-input v-model="email" label="Email-Adresse" :errorMessage="errorEmail" type="email" autocomplete="email" />
       <el-grid class="align-items-center justify-content-space-between actions">
         <el-button type="submit">Passwort zurücksetzen</el-button>
       </el-grid>

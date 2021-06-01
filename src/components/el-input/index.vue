@@ -2,7 +2,7 @@
   <div class="form-element form-element--input" :class="{ error: !!errorMessage }">
     <label>
       <span class="label" v-if="!!label">{{ label }}</span>
-      <input :value="modelValue" @input="$emit('update:modelValue', $event.target.value)" :type="type" />
+      <input :value="modelValue" @input="$emit('update:modelValue', $event.target.value)" :type="type" :autocomplete="autocomplete" />
       <transition name="slide-fade">
         <span class="error-message" v-if="!!errorMessage">{{ errorMessage }}</span>
       </transition>
@@ -13,7 +13,7 @@
 <script>
 export default {
   name: 'el-input',
-  props: ['modelValue', 'label', 'type', 'errorMessage'],
+  props: ['modelValue', 'label', 'type', 'errorMessage', 'autocomplete'],
   emits: ['update:modelValue'],
 }
 </script>
