@@ -1,7 +1,8 @@
 import { createApp } from 'vue'
 import template from './template'
 import router from './router'
-import * as components from '@/components'
+import * as components from './components'
+import './styles'
 
 const app = createApp(template)
 
