@@ -1,5 +1,11 @@
-import Test from './test'
+import Button from './el-button'
+import Checkbox from './el-checkbox'
+import Input from './el-input'
+import Panel from './el-panel'
 
 export {
-  Test,
+  Button,
+  Checkbox,
+  Input,
+  Panel,
 }

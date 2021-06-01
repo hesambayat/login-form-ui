@@ -1,6 +1,12 @@
 <template>
-  # Login form
-  <test-component>Test component</test-component>
+  <el-panel>
+    <h3>Subtitles</h3>
+    <h1>Title</h1>
+    <el-input />
+    <el-input />
+    <el-checkbox />
+    <el-button>Submit</el-button>
+  </el-panel>
 </template>
 
 <script>
