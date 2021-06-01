@@ -1,0 +1,8 @@
+:root {
+  --spacing: 12px;
+
+  --color-gray: #e5e5e5;
+  --color-white: #ffffff;
+
+  --box-shadow: 0px 12px 48px rgba(0, 0, 0, 0.1);
+}
